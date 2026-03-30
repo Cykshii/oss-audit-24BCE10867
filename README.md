@@ -1,94 +1,43 @@
-# Linuxvityarthi
-Open Source Software Audit Project Project Overview
+The Open Source Audit: Capstone Project
+Course: Open Source Software (OSS NGMC)
 
-This repository contains my Open Source Software audit project completed as part of the Open Source Software course at VIT Bhopal. The objective of this project is to explore how open-source software works within a Linux environment and to understand the philosophy, ecosystem, and technical structure behind widely used FOSS tools.
+Student Name: Sakshi Chandra
 
-For this audit, I selected Python as the primary open-source software. Python is one of the most widely used programming languages in the world and is known for its readability, simplicity, and strong open-source community support.
+Registration Number: 24BCE10867
 
-Through this project, I examined Python's presence in a Linux system and implemented a set of shell scripts to analyze system information, software installation, file permissions, log files, and open-source philosophy. Selected Open Source Software
+Chosen Software for Audit: Python
 
-Software Name: Python Category: Programming Language License: Python Software Foundation License (Open Source)
+Project Overview
+This repository contains five shell scripts written as part of the Open Source Audit Capstone Project. These scripts demonstrate practical Linux command-line skills, automation, and system administration concepts, all themed around my chosen open-source software: Python.
 
-Python was created by Guido van Rossum and first released in 1991. It was designed to emphasize code readability and developer productivity. Over the years, Python has become an essential tool in fields such as:
+Script Descriptions
+script1.sh (System Identity Report): Introduces the Linux system. It displays the distribution name, kernel version, current user, uptime, date, and a brief statement about the open-source license protecting the OS and Python (PSF License).
+script2.sh (FOSS Package Inspector): Checks if the python3 package is installed on the system using dpkg. It fetches the package version and description, and outputs a short philosophical note about Python using a case statement.
+script3.sh (Disk and Permission Auditor): Loops through important system directories (including /user/lib/python3) using a for loop to report their permissions, ownership, and total disk space used.
+script4.sh (Log File Analyzer): Reads a specified log file line by line using a while loop, counts how many times a specific keyword (like "error") appears, and outputs a summary along with the matching lines.
+script5.sh (Open Source Manifesto Generator): An interactive script that prompts the user with three questions about open-source philosophy, generates a customized manifesto paragraph, and saves it to a new .txt file.
+Dependencies Required
+To run these scripts, your system must have:
 
-1)Software development 2)Data science 3)Artificial intelligence 4)Web development 5)Automation and scripting
+A Linux environment (Ubuntu/Debian recommended, or WSL on Windows).
+The Bash shell (/bin/bash).
+Standard GNU core utilities (echo, grep, awk, cut, ls, df/du).
+dpkg package manager (for Script 2).
+Python 3 installed (for Script 2 to successfully find the package).
+Step-by-Step Instructions to Run the Scripts
+Step 1: Open the terminal Open your Linux terminal (or WSL) and navigate to the directory where you downloaded these scripts. Step 2: Make the scripts executable Before running them, you must grant execution permissions. Run the following command:
 
-Because Python is open-source, developers around the world can contribute to its development and improve its ecosystem.
+chmod +x script1.sh script2.sh script3.sh script4.sh script5.sh
+Step 3: Execute the scripts Run each script using the ./ prefix.
 
-Project Objectives
+Run Script 1, 2, 3, and 5 normally:
 
-1)The main objectives of this project were: 2)To understand the philosophy behind open-source software. 3)To analyze how an open-source tool exists and operates inside a Linux environment. 4)To gain hands-on experience with Linux shell scripting. 5)To inspect system information, packages, logs, and directories using automation scripts. 6)To document observations and learn how open-source ecosystems function
+./script1.sh
+./script2.sh
+./script3.sh
+./script5.sh
+Running Script 4 (Log Analyzer): Script 4 requires a log file to read. You can create a quick dummy log file and test it by running:
 
-Repository Structure
-
-This repository contains several shell scripts that perform different auditing and analysis tasks. 1)README.md 2)script1_system_identity.sh 3)script2_package_inspector.sh 4)script3_disk_auditor.sh 5)script4_log_analyzer.sh 6)script5_manifesto_generator.sh
-
-Script Descriptions Script 1 – System Identity Report
-
-This script gathers basic information about the Linux system and displays it in a structured format.
-
-It collects details such as:
-
-1)Current user 2)Linux distribution 3)Kernel version 4)System uptime 5)Current date and time
-
-This script demonstrates how simple shell commands can be combined to generate a quick system overview.
-
-Script 2 – FOSS Package Inspector
-
-The second script checks whether Python is installed on the system.
-
-It performs tasks such as:
-
-1)Detecting the Python installation 2)Displaying the installed version 3)Printing a short description of Python
-
-This helps confirm the presence of the selected open-source software in the Linux environment.
-
-Script 3 – Disk and Permission Auditor
-
-This script inspects several important Linux directories and reports information such as:
-
-1)Directory permissions 2)Owner and group 3)Directory size
-
-Directories examined include: /etc /var/log /home /usr/bin /tmp
-
-Script 4 – Log File Analyzer
-
-The log analyzer script scans Linux log files and searches for specific keywords such as "error".
-
-The script:
-
-1)Reads a log file line by line 2)Counts occurrences of the keyword 3)Displays the most recent matching log entries
-
-This demonstrates basic log monitoring techniques used in system administration.
-
-Script 5 – Open Source Manifesto Generator
-
-The final script is an interactive script that generates a small open-source philosophy statement.
-
-The script asks the user three questions:
-
-1)An open-source tool they use daily 2)What "freedom" means to them 3)Something they would build for the community
-
-Based on the answers, the script generates a short Open Source Manifesto and saves it as a text file.
-
-This script highlights the collaborative and philosophical aspect of open-source software.
-
-How to Run the Scripts First make the scripts executable: chmod +x *.sh
-
-Then run any script using: ./script_name.sh
-
-Technologies Used: 1)Linux (Ubuntu / WSL) 2)Bash Shell Scripting 3)Python (audited software) 4)Git & GitHub for version control
-
-Key Learnings
-
-Working on this project helped me understand several important concepts, including:
-
-1)The structure of Linux file systems 2)How open-source software is installed and maintained 3)The importance of automation through shell scripting 4)Basic system auditing techniques 5)The collaborative nature of open-source communities
-
-It also improved my familiarity with GitHub and version control, which are essential tools in modern software development.
-
-Conclusion
-
-Open-source software plays a vital role in today's technology ecosystem. Projects like Python demonstrate how collaborative development can produce powerful tools used across industries.
-
+echo -e "INFO: App started\nERROR: Failed to load module\nWARNING: Low memory\nERROR: Connection timeout" > dummy_log.txt
+./script4.sh dummy_log.txt error
 This audit project provided practical experience with Linux systems, scripting, and open-source principles. It also highlighted the transparency and flexibility that make open-source software so valuable.
