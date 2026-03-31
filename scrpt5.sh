@@ -1,18 +1,42 @@
 #!/bin/bash
-# Script 4: Log File Analyzer
-# Usage: ./log_analyzer.sh /var/log/messages
-LOGFILE=$1
-KEYWORD=${2:-"error"} # Default keyword is 'error'
-COUNT=0
-if [ ! -f "$LOGFILE" ]; then
-echo "Error: File $LOGFILE not found."
-exit 1
-fi
-while IFS= read -r LINE; do
-if echo "$LINE" | grep -iq "$KEYWORD"; then
-COUNT=$((COUNT + 1))
-fi
-done < "$LOGFILE"
-echo "Keyword '$KEYWORD' found $COUNT times in $LOGFILE"
-# TODO: Add a do-while style retry if the file is empty,
-# and print the last 5 matching lines using tail + grep
+# Script 5: Open Source Manifesto Generator
+# Author:SAKSHI CHANDRA
+echo "Answer three questions to generate your manifesto."
+echo ""
+
+# --- Interactive User Input (Unit 5) ---
+read -p "1. Name one open-source tool you use every day: " TOOL
+read -p "2. In one word, what does 'freedom' mean to you? " FREEDOM
+read -p "3. Name one thing you would build and share freely: " BUILD
+
+# --- Variable Preparation ---
+DATE=$(date '+%d %B %Y')
+USER_ID=$(whoami)
+OUTPUT="manifesto_${USER_ID}.txt"
+
+# --- TODO: Compose Paragraph and Write to File ---
+# Using string concatenation and the '>' redirection operator
+{
+    echo "----------------------------------------------------"
+    echo "         OPEN SOURCE MANIFESTO ($DATE)              "
+    echo "----------------------------------------------------"
+    echo "My name is $USER_ID, and I believe in the power of FOSS."
+    echo "Every day, I rely on $TOOL to empower my digital life."
+    echo "To me, the essence of open source is '$FREEDOM'."
+    echo ""
+    echo "In the spirit of global collaboration, I pledge that"
+    echo "one day I will build and share a $BUILD with the world,"
+    echo "just as others shared their hard work with me."
+    echo "----------------------------------------------------"
+} > "$OUTPUT"
+
+# --- TODO: Progress Indicator (Optional but impressive) ---
+echo -n "Compiling your manifesto "
+for i in {1..3}; do echo -n "."; sleep 0.5; done
+echo " DONE!"
+
+# --- Final Display ---
+echo "Manifesto successfully saved to: $OUTPUT"
+echo ""
+cat "$OUTPUT"
+echo "===================================================="
