@@ -1,49 +1,86 @@
-# oss-audit-24BCE10867
+# oss-audit-24BCE10867-SAKSHI CHANDRA
 
-**Course:** Open Source Software (OSS NGMC)
 
-**Student Name:** SAKSHI CHANDRA
+> Open Source Software Audit Project
 
-**Registration Number:** 24BCE10867
+---
 
-**Chosen Software for Audit:** Python
+##  Student Details
 
-## Project Overview
-This repository contains five shell scripts written as part of the Open Source Audit Capstone Project. These scripts demonstrate practical Linux command-line skills, automation, and system administration concepts, all themed around my chosen open-source software: Python.
+| Field | Details |
+|------|--------|
+| Name | SAKSHI CHANDRA|
+| Reg No. | 24BCE10867 |
 
-## Script Descriptions
-* ```script1.sh``` **(System Identity Report):** Introduces the Linux system. It displays the distribution name, kernel version, current user, uptime, date, and a brief statement about the open-source license protecting the OS and Python (PSF License).
-* ```script2.sh``` **(FOSS Package Inspector):** Checks if the ```python3``` package is installed on the system using ```dpkg```. It fetches the package version and description, and outputs a short philosophical note about Python using a ```case``` statement.
-* ```script3.sh``` **(Disk and Permission Auditor):** Loops through important system directories (including ```/user/lib/python3```) using a ```for``` loop to report their permissions, ownership, and total disk space used.
-* ```script4.sh``` **(Log File Analyzer):** Reads a specified log file line by line using a ```while``` loop, counts how many times a specific keyword (like "error") appears, and outputs a summary along with the matching lines.
-* ```script5.sh``` **(Open Source Manifesto Generator):** An interactive script that prompts the user with three questions about open-source philosophy, generates a customized manifesto paragraph, and saves it to a new ```.txt``` file.
+---
 
-## Dependencies Required
-To run these scripts, your system must have:
-* A Linux environment (Ubuntu/Debian recommended, or WSL on Windows).
-* The Bash shell (```/bin/bash```).
-* Standard GNU core utilities (```echo```, ```grep```, ```awk```, ```cut```, ```ls```, ```df/du```).
-*  ```dpkg``` package manager (for Script 2).
-* Python 3 installed (for Script 2 to successfully find the package).
+##  About Project
 
-## Step-by-Step Instructions to Run the Scripts
-**Step 1: Open the terminal** Open your Linux terminal (or WSL) and navigate to the directory where you downloaded these scripts.
-**Step 2: Make the scripts executable** Before running them, you must grant execution permissions. Run the following command:
-```
-chmod +x script1.sh script2.sh script3.sh script4.sh script5.sh
-```
-**Step 3: Execute the scripts** Run each script using the ```./``` prefix.
+This project is an audit of VLC Media Player focusing on:
+- Open source concepts
+- GPL license
+- Linux system usage
+- Shell scripting
 
-_Run Script 1, 2, 3, and 5 normally:_
-```
-./script1.sh
-./script2.sh
-./script3.sh
-./script5.sh
-```
-_Running Script 4 (Log Analyzer):
-Script 4 requires a log file to read. You can create a quick dummy log file and test it by running:_
-```
-echo -e "INFO: App started\nERROR: Failed to load module\nWARNING: Low memory\nERROR: Connection timeout" > dummy_log.txt
-./script4.sh dummy_log.txt error
-```
+---
+
+##  Repository Structure
+
+- README.md
+- project_script1.sh
+- project_script2.sh
+- project_script3.sh
+- project_script4.sh
+- project_script5.sh
+
+
+---
+
+## Shell Scripts — Output
+
+###  Script 1 — System Information
+
+**Output:**
+![Script 1](screenshots/script1_output.png)
+
+---
+
+###  Script 2 — Package Checker
+
+**Output:**
+![Script 2](screenshots/script2_output.png)
+
+---
+
+###  Script 3 — Directory Audit
+
+**Output:**
+![Script 3](screenshots/script3_output.png)
+
+---
+
+###  Script 4 — Log Analyzer
+
+**Output:**
+![Script 4](screenshots/script4_output.png)
+
+---
+
+###  Script 5 — Manifesto Generator
+
+**Output:**
+![Script 5](screenshots/script5_output.png)
+
+---
+
+## How to Run
+
+```bash
+chmod +x project_script*.sh
+
+./project_script1.sh
+./project_script2.sh
+./project_script3.sh
+./project_script4.sh /var/log/syslog error
+./project_script5.sh
+
